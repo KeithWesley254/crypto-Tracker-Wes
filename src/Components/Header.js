@@ -26,7 +26,7 @@ function Header(){
                     <Typography 
                     onClick={() => navigate("/")}
                     className="typoTracker"
-                    style= {{ fontFamily: "Teko, sans-serif", fontSize: "30px" }}
+                    style= {{ fontFamily: "'Carter One', cursive", fontSize: "30px" }}
                     variant="h6"
                     >
                         Crypto Tracker
@@ -39,7 +39,8 @@ function Header(){
                         color: "gold",
                         fontWeight: "bold",
                         cursor: "pointer",
-                        fontFamily: "Teko, sans-serif", fontSize: "30px",
+                        fontFamily: "'Carter One', cursive",
+                        fontSize: "30px",
                     }}
                     >
                         FeedBack
