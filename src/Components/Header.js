@@ -2,6 +2,7 @@ import { AppBar, createTheme, MenuItem, Select, ThemeProvider, Toolbar, Typograp
 import { Container } from "@mui/system";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { CryptoState } from "../CryptoContext";
 
 function Header(){
 
@@ -9,12 +10,14 @@ function Header(){
 
     const darkTheme = createTheme({
         palette: {
-            primary:{
-                main: "#fff",
-            },
-            type: "dark",
-        }
-    })
+          mode: 'dark',
+        },
+    });
+
+    const {currency, setCurrency} = CryptoState()
+    
+    // console.log (currency)
+
     return (
         <ThemeProvider theme={darkTheme}>
         <AppBar color="transparent" position="static">
@@ -22,7 +25,9 @@ function Header(){
                 <Toolbar>
                     <Typography 
                     onClick={() => navigate("/")}
-                    className="typoTracker">
+                    className="typoTracker"
+                    variant="h6"
+                    >
                         Crypto Tracker
                      </Typography>
                     <Select 
@@ -30,11 +35,13 @@ function Header(){
                     style={{
                         width: 100,
                         height: 40,
-                        marginLeft: 15,
+                        marginRight: 15,
                     }}
+                    value={currency}
+                    onChange={(e) => setCurrency(e.target.value)}
                     >
                         <MenuItem value={"USD"}>USD</MenuItem>
-                        <MenuItem value={"INR"}>INR</MenuItem>
+                        <MenuItem value={"BTC"}>BTC</MenuItem>
                     </Select>
                 </Toolbar>
             </Container>
