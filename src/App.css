@@ -28,7 +28,8 @@ a {
 }
 
 .bannerImg{
-  background-image: url("../public/thatsHot.jpeg");
+  background-image: url("../public/Moonlight.jpeg");
+  background-size: cover;
 }
 
 .bannerContainer{
@@ -51,4 +52,13 @@ a {
   height: 50%;
   display: flex;
   align-items: center;
+}
+
+.itemsLink{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #fff;
 }

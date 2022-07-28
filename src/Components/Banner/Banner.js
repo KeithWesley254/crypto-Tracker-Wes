@@ -30,6 +30,7 @@ export default function Banner(){
                         Everything Crypto-currency
                     </Typography>
                 </div>
+                <br />
                 <TheWheel/>
             </Container>
         </div>
