@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap');
 @import "react-alice-carousel/lib/alice-carousel.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&family=Teko:wght@500&display=swap');
 
 * {
   margin: 0;
@@ -22,7 +23,6 @@ a {
 .typoTracker{
   flex: 1;
   color: gold;
-  font-family: Monterrat;
   font-weight: bold;
   cursor: pointer;
 }

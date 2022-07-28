@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SelectBtn ({ children, selected, onClick }) {
+function SelectBtn ({ children, onClick }) {
   return (
     <span
     className='selectBtn'

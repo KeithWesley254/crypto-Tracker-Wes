@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Components/Header';
 import HomePage from './Pages/HomePage';
 import CoinPage from './Pages/CoinPage';
+import FeedBackPage from './Pages/FeedBackPage';
 
 function App() {
 
@@ -12,7 +13,8 @@ function App() {
     <Header />
     <Routes>
       <Route exact='true' path='/' element={<HomePage />}/>
-      <Route path='/coins/:id' element={<CoinPage />}/>
+      <Route path='/feedback' element={<FeedBackPage />} />
+      <Route path='/coins/:id' element={<CoinPage />} />
     </Routes>
    </div>
    </BrowserRouter>

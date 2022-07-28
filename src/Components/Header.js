@@ -26,10 +26,25 @@ function Header(){
                     <Typography 
                     onClick={() => navigate("/")}
                     className="typoTracker"
+                    style= {{ fontFamily: "Teko, sans-serif", fontSize: "30px" }}
                     variant="h6"
                     >
                         Crypto Tracker
-                     </Typography>
+                    </Typography>
+
+                    <Typography 
+                    onClick={() => navigate("/feedback")}
+                    style={{
+                        flex: "1",
+                        color: "gold",
+                        fontWeight: "bold",
+                        cursor: "pointer",
+                        fontFamily: "Teko, sans-serif", fontSize: "30px",
+                    }}
+                    >
+                        FeedBack
+                    </Typography>
+
                     <Select 
                     variant="outlined"
                     style={{

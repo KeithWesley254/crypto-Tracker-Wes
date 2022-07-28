@@ -71,7 +71,6 @@ function CoinInfo({ coin }) {
                             <SelectBtn 
                             key={day.value}
                             onClick={() => setDays(day.value)}
-                            selected={day.value === days}
                             >
                                 {day.label}
                             </SelectBtn>
