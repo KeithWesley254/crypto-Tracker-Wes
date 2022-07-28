@@ -27,7 +27,7 @@ export default function Banner(){
                         fontFamily: "Montserrat",
                     }}
                     >
-                        Everything Crypto-currency
+                        Top 100 Cryptocurrencies And Trending coins
                     </Typography>
                 </div>
                 <br />

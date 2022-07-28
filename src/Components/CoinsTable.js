@@ -1,4 +1,4 @@
-import { Typography, ThemeProvider, createTheme, TextField, TableContainer, LinearProgress, Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
+import { Typography, ThemeProvider, createTheme, TextField, TableContainer, LinearProgress, Table, TableHead, TableRow, TableCell, TableBody, Pagination } from '@mui/material';
 import { Container } from '@mui/system';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
@@ -8,6 +8,7 @@ const CoinsTable = () => {
     const [coins, setCoins] = useState([]);
     const [loading, setLoading] = useState(false);
     const [search, setSearch] = useState("");
+    const [page, setPage] = useState(1);
 
     const { currency, symbol } = CryptoState();
 
@@ -85,11 +86,17 @@ const CoinsTable = () => {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                { handleSearch().map((row) => {
+                                { handleSearch()
+                                //1-1=0 then 0*10=0, then 0 + 10 to display the first 10 items
+                                //eg we are in page 2: 
+                                //2-1=1 then 1*10=10 (After 10 items) Display next items 2-1=1 1*10=10 10+10=20
+                                //which are 10 items after the first 10 items
+                                .slice((page - 1) * 10, (page - 1) * 10 + 10)
+                                .map((row) => {
 
                                     const profit = row.price_change_percentage_24h > 0;
                                     // console.log(row)
-                                    
+
                                     return (
                                         <TableRow
                                         onClick={() => navigate(`/coins/${row.id}`)}
@@ -99,7 +106,7 @@ const CoinsTable = () => {
                                             <TableCell 
                                             component="th" 
                                             scope='row'
-                                            styles={{
+                                            style={{
                                                 display: "flex",
                                                 gap: 15,
                                             }}
@@ -149,6 +156,23 @@ const CoinsTable = () => {
                     )
                 }
             </TableContainer>
+
+            <Pagination 
+
+            className="pagiNation"
+            style={{
+                padding: 20,
+                width: "100%",
+                display: "flex",
+                justifyContent: "center"
+            }}
+            count={(handleSearch().length/10).toFixed(0)}
+            onChange={(_, value) => {
+                setPage(value);
+                window.scroll(0, 450);
+            }}
+            />
+
         </Container>
     </ThemeProvider>
   )

@@ -62,3 +62,16 @@ a {
   text-transform: uppercase;
   color: #fff;
 }
+
+.profitRow{
+  background-color: #16171a;
+  cursor: pointer;
+  font-family: Montserrat;
+}
+
+.profitRow:hover{
+  background-color: #131111;
+}
+.pagiNation button{
+  color: gold;
+}
