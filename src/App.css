@@ -12,4 +12,18 @@ a {
   color: gold;
 }
 
+.overallTop{
+  background-color: #14161a;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.typoTracker{
+  flex: 1;
+  color: gold;
+  font-family: Monterrat;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 /* Navbar Section */
