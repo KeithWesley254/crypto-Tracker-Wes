@@ -9,7 +9,7 @@ const CoinsTable = () => {
     const [loading, setLoading] = useState(false);
     const [search, setSearch] = useState("");
 
-    const { currency } = CryptoState();
+    const { currency, symbol } = CryptoState();
 
     const navigate = useNavigate();
 
@@ -32,12 +32,16 @@ const CoinsTable = () => {
         },
     });
 
+    function numberWithCommas(x){
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
     //confirm search matches the coins
     function handleSearch(){
-        return coins.filter((coin) => {
+        return coins.filter((coin) => 
             coin.name.toLowerCase().includes(search) ||
             coin.symbol.toLowerCase().includes(search)
-        })
+        )
     }
 
   return (
@@ -81,8 +85,11 @@ const CoinsTable = () => {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {handleSearch().map((row) => {
+                                { handleSearch().map((row) => {
+
                                     const profit = row.price_change_percentage_24h > 0;
+                                    // console.log(row)
+                                    
                                     return (
                                         <TableRow
                                         onClick={() => navigate(`/coins/${row.id}`)}
@@ -110,11 +117,29 @@ const CoinsTable = () => {
                                                         {row.symbol}
                                                     </span>
 
-                                                    <span>
+                                                    <span style={{ color: "darkgrey" }}>
                                                         {row.name}
                                                     </span>
                                                  </div>
-
+                                            </TableCell>
+                                            <TableCell align='right'>
+                                                {symbol}{" "}
+                                                {numberWithCommas(row.current_price.toFixed(2))}
+                                            </TableCell>
+                                            <TableCell
+                                            align = "right"
+                                            style = {{
+                                                color: profit > 0 ? "#01f704" : "#ff0101",
+                                                fontWeight: 500,
+                                            }}
+                                            >
+                                                {profit && "+"}
+                                                {row.price_change_percentage_24h.toFixed(2)}%
+                                            </TableCell>
+                                            <TableCell align='right'>
+                                                {symbol}{" "}
+                                                {numberWithCommas(row.market_cap.toString().slice(0, -6))}
+                                                Million
                                             </TableCell>
                                         </TableRow>
                                     )
