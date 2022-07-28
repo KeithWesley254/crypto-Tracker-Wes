@@ -75,3 +75,70 @@ a {
 .pagiNation button{
   color: gold;
 }
+
+.coinContainer{
+  display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  .coinContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.sideBar{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25;
+  border-right: 2px solid grey;
+}
+
+@media only screen and (max-width: 768px){
+  .sideBar {
+    width: 100%;
+  }
+}
+.coinHeader{
+  font-weight: bold;
+  margin-bottom: 20;
+  font-family: Montserrat;
+}
+
+.coinDescription{
+  width: 100%;
+  font-family: Montserrat;
+  padding: 25;
+  padding-bottom: 15;
+  padding-top: 0;
+  text-align: center;
+}
+
+.marketData{
+  align-self: flex-start;
+  padding: 25;
+  padding-top: 10;
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .marketData {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .marketData {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 0px) {
+  .marketData {
+    align-items: flex-start;
+  }
+}
