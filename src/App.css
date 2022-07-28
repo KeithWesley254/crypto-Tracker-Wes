@@ -142,3 +142,41 @@ a {
     align-items: flex-start;
   }
 }
+
+.chartContainer{
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25;
+  padding: 40;
+}
+
+@media screen and (max-width: 768px) {
+  .chartContainer {
+    width: 100%;
+    margin-top: 0;
+    padding: 20;
+    padding-top: 0;
+  }
+}
+
+.selectBtn {
+  border-radius: 5;
+  padding: 10;
+  padding-left: 20;
+  padding-right: 20;
+  font-family: Montserrat;
+  cursor: pointer;
+  background-color: gold;
+  color: black;
+  font-weight: 700;
+  width: 22%;
+  text-align: center;
+}
+
+.selectBtn:hover{
+  background-color:#13161a;
+  color: gold;
+  box-shadow: 0 9px 12px gold;
+}
