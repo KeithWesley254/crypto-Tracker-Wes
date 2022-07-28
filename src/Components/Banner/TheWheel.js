@@ -55,6 +55,7 @@ const TheWheel = () => {
         )
     })
 
+    //how many items displayed on the wheel according to devices' pixels
     const responsive ={
         0:  {
             items: 2,
