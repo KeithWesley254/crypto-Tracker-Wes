@@ -45,6 +45,11 @@ const FeedBackForm = ({ handlePosting }) => {
   return (
     <ThemeProvider theme={darkTheme}>
     <Container className='formContainer'>
+    <div 
+    style={{ fontSize: "20px", fontFamily: "'Carter One', cursive", fontWeight: "bold", color: "gold", }}
+    >
+        FeedBack Form
+    </div>
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
       <div>
         <FormControl sx={{ m: 1, width: '35ch' }}>

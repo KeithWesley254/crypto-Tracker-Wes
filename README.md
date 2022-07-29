@@ -1,7 +1,7 @@
 # TXC Clan Crypto
 # Title:
 
-Crptocurrency Tracker and relevant Information
+Crptocurrency Tracker and Relevant Information
 
 # Author:
 
@@ -13,7 +13,7 @@ TXC Clan Crypto is an application inspired by the rise of cryptocurrencies.
 
 The application is aimed at giving relevant up to date information on everything related to cryptocurrencies. More features will be implemented in the future such as information on different owners and other investment areas.
 
-As Head of TXC Clan you can reach out for requests or another relevant info.
+As Head of TXC Clan you can reach out for requests or any other relevant information
 
 # Instructions:
 1. The Crypto Tracker at the top is the home button that will navigate to the home page.

@@ -1,4 +1,4 @@
-import { Button, createTheme, Typography } from '@mui/material';
+import { Button, ButtonGroup, createTheme, Typography } from '@mui/material';
 import { Container } from '@mui/system';
 import React from 'react'
 import { ThemeProvider } from 'styled-components';
@@ -32,7 +32,7 @@ const FeedBackComments = ({ commentEd, deleteComm }) => {
                 </div>
                 <br />
                 <div>
-                    <Button variant='outlined' onClick={handleDelete}>Delete</Button>
+                    <Button color='error' sx={{color: "#ff0101",}} variant='outlined' onClick={handleDelete}>Delete</Button>
                 </div>
             </div>
         )
