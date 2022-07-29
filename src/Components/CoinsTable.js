@@ -54,6 +54,16 @@ const CoinsTable = () => {
             >
                 Cryptocurrencies Ranked by Market Cap
             </Typography>
+            <Typography
+            variant="subtitle2"
+            style={{
+                color: "darkgrey",
+                textTransform: "capitalize",
+                fontFamily: "Montserrat",
+            }}
+            >
+                Click on a coin for more information
+            </Typography>
 
             <TextField 
             label="Search for a coin ..."
