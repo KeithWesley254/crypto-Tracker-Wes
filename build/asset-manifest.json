@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.39ba8d0a.css",
+    "main.js": "/static/js/main.5020fa26.js",
+    "static/media/coolcat.webp": "/static/media/coolcat.df58ab98e17049dc6311.webp",
+    "index.html": "/index.html",
+    "main.39ba8d0a.css.map": "/static/css/main.39ba8d0a.css.map",
+    "main.5020fa26.js.map": "/static/js/main.5020fa26.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.39ba8d0a.css",
+    "static/js/main.5020fa26.js"
+  ]
+}
