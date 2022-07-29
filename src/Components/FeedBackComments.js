@@ -1,9 +1,9 @@
-import { createTheme } from '@mui/material';
+import { Button, createTheme, Typography } from '@mui/material';
 import { Container } from '@mui/system';
 import React from 'react'
 import { ThemeProvider } from 'styled-components';
 
-const FeedBackComments = () => {
+const FeedBackComments = ({ commentEd, deleteComm }) => {
 
     const darkTheme = createTheme({
         palette: {
@@ -11,10 +11,41 @@ const FeedBackComments = () => {
         },
     })
 
+    const displayComments = commentEd.map((comment) => {
+
+        function handleDelete(){
+            deleteComm(comment.id)
+        }
+
+        return (
+            <div key={comment.id}>
+                <div>
+                    <Typography variant="h3">
+                        {comment.fullName}
+                    </Typography>
+                </div>
+                <br />
+                <div>
+                    <Typography variant="body1">
+                        {comment.comment}
+                    </Typography>
+                </div>
+                <br />
+                <div>
+                    <Button variant='outlined' onClick={handleDelete}>Delete</Button>
+                </div>
+            </div>
+        )
+    })
+    
   return (
     <ThemeProvider theme={darkTheme}>
         <Container className="commentContainer">
-            <div>Hello</div>
+            <div 
+            style={{ fontSize: "20px", fontFamily: "'Carter One', cursive", fontWeight: "bold", color: "gold", }}
+            >What people are saying</div>
+            <br />
+            <div>{displayComments}</div>
         </Container>
     </ThemeProvider>
   )
