@@ -12,13 +12,13 @@ function CoinInfo({ coin }) {
     const [historicalData, setHistoricalData] = useState()
     const [days, setDays] = useState(1);
 
-    const{ currency } = CryptoState()
+    const{ currency, symbol } = CryptoState()
 
     useEffect(() => {
         fetch(`https://api.coingecko.com/api/v3/coins/${coin.id}/market_chart?vs_currency=${currency}&days=${days}`)
         .then(r => r.json())
         .then(data => setHistoricalData(data.prices))
-    }, [days])
+    }, [days, symbol])
 
     const darkTheme = createTheme({
         palette: {

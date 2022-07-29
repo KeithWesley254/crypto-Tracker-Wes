@@ -17,7 +17,7 @@ export default function Banner(){
                         fontFamily: "Montserrat",
                     }}
                     >
-                        Crypto Tracker
+                        TXC Clan Crypto
                     </Typography>
                     <Typography
                     variant="subtitle2"
