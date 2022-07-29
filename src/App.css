@@ -33,7 +33,7 @@ a {
 }
 
 .bannerContainer{
-  height: 400;
+  height: 400px;
   display: flex;
   flex-direction: column;
   padding-top: 25;
@@ -179,4 +179,38 @@ a {
   background-color:#13161a;
   color: gold;
   box-shadow: 0 9px 12px gold;
+}
+
+.formContainer {
+  text-align: center;
+  width: 100%;
+}
+
+.btnContainer{
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .formContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.commentContainer{
+  width: 75%;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25;
+  padding: 40;
+}
+
+@media screen and (max-width: 768px) {
+  .commentContainer {
+    width: 100%;
+    margin-top: 0;
+    padding: 20;
+    padding-top: 0;
+  }
 }
