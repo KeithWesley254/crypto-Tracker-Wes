@@ -29,6 +29,7 @@ CoinGecko at https://www.coingecko.com/
 
 # Deployed/Website link:
 
+https://frabjous-swan-1f65ad.netlify.app/
 # License:
 
 MIT License
