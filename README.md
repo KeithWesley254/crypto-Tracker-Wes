@@ -27,8 +27,6 @@ I used only one API for this application as they have all the necessary endpoint
 
 CoinGecko at https://www.coingecko.com/
 
-My Api = https://phase2-api.herokuapp.com/
-
 # Deployed/Website link:
 
 https://frabjous-swan-1f65ad.netlify.app/
