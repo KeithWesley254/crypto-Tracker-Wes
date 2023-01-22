@@ -27,11 +27,6 @@ a {
   cursor: pointer;
 }
 
-.bannerImg{
-  background-image: url("../public/coolcat.webp");
-  background-size: cover;
-}
-
 .bannerContainer{
   height: 400px;
   display: flex;

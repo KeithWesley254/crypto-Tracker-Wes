@@ -2,11 +2,12 @@ import { Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 import TheWheel from "./TheWheel";
+import background from "./coolcat.webp";
 
 export default function Banner(){
 
     return (
-        <div className="bannerImg">
+        <div style={{ backgroundImage: `url(${background})`}}>
             <Container className="bannerContainer">
                 <div className="tagLine">
                     <Typography

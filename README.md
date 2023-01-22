@@ -23,13 +23,19 @@ As Head of TXC Clan you can reach out for requests or any other relevant informa
 
 # API(s) used:
 
-I used only one API for this application as they have all the necessary endpoints to make it a success.
-
-CoinGecko at https://www.coingecko.com/
+I used 2 APIs for this application.
+<ol>
+    <li>
+        My personal API
+    </li>
+    <li>
+        CoinGecko at https://www.coingecko.com/
+    </li>
+</ol>
 
 # Deployed/Website link:
 
-https://frabjous-swan-1f65ad.netlify.app/
+http://crypto-tracker-1013047617.eu-west-2.elb.amazonaws.com/
 # License:
 
 MIT License
