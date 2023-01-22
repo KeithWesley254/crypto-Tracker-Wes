@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Grid, Box, Button } from '@mui/material';
 import LoginForm from '../Components/LoginForm';
 import SignUpForm from '../Components/SignUpForm';
-import CryptoImage from '../assets/images/crypto-asset-gold.svg'
+import CryptoImage from '../assets/images/crypto-asset-2.jpg'
 
 const Login = () => {
 
