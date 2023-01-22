@@ -1,4 +1,4 @@
-import { Typography, ThemeProvider, createTheme, TextField, TableContainer, LinearProgress, Table, TableHead, TableRow, TableCell, TableBody, Pagination } from '@mui/material';
+import { Typography, TextField, TableContainer, LinearProgress, Table, TableHead, TableRow, TableCell, TableBody, Pagination } from '@mui/material';
 import { Container } from '@mui/system';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
@@ -25,14 +25,6 @@ const CoinsTable = () => {
         })
     }, [currency])
 
-    // console.log (coins)
-
-    const darkTheme = createTheme({
-        palette: {
-          mode: 'dark',
-        },
-    });
-
     function numberWithCommas(x){
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
@@ -46,7 +38,7 @@ const CoinsTable = () => {
     }
 
   return (
-    <ThemeProvider theme={darkTheme}>
+    <>
         <Container style={{textAlign: "center"}}>
             <Typography
             variant="h5"
@@ -184,7 +176,7 @@ const CoinsTable = () => {
             />
 
         </Container>
-    </ThemeProvider>
+    </>
   )
 }
 

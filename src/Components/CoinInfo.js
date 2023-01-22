@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { CryptoState } from '../CryptoContext';
-import { CircularProgress, createTheme, ThemeProvider } from '@mui/material';
+import { CircularProgress } from '@mui/material';
 import { chartDays } from '../ChartDays';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, registerables } from 'chart.js';
@@ -20,14 +20,8 @@ function CoinInfo({ coin }) {
         .then(data => setHistoricalData(data.prices))
     }, [days, symbol])
 
-    const darkTheme = createTheme({
-        palette: {
-          mode: 'dark',
-        },
-    });
-
   return (
-    <ThemeProvider theme={darkTheme}>
+    <>
         <div className="chartContainer">
             {
                 !historicalData ? (
@@ -80,7 +74,7 @@ function CoinInfo({ coin }) {
                 )
             }
         </div>
-    </ThemeProvider>
+    </>
   )
 }
 

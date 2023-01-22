@@ -1,29 +1,35 @@
-import { Box, Button, createTheme, FormControl, FormHelperText, Input, InputLabel, ThemeProvider } from '@mui/material';
+import { Box, Button, FormControl, FormHelperText, InputLabel, OutlinedInput } from '@mui/material';
 import { Container } from '@mui/system';
 import React, { useState } from 'react'
+import { UserState } from '../UserContext';
 
 const FeedBackForm = ({ handlePosting }) => {
 
-    const darkTheme = createTheme({
-        palette: {
-          mode: 'dark',
-        },
-    });
+    const { user, userProfile } = UserState();
 
     const [formData, setFormData] = useState({
-        fullName: '',
-        email: '',
-        comment: '',
+        full_name: userProfile?.full_name,
+        email: user.email,
+        user_comment: '',
+        user_id: user.id
     })
 
     function handleSubmit(e){
+        const token = JSON.parse(localStorage.getItem("token"));
+
         e.preventDefault();
-        fetch('https://phase2-api.herokuapp.com/userdata',{
+        fetch('http://feedback-loadbalancer-1037602220.eu-west-2.elb.amazonaws.com/api/feedbacks',{
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
             },
-            body: JSON.stringify(formData)
+            body: JSON.stringify({
+                full_name: formData.full_name,
+                email: user.email,
+                user_comment: formData.user_comment,
+                user_id: user.id
+            })
         })
         .then(r => r.json())
         .then(data => {
@@ -31,9 +37,8 @@ const FeedBackForm = ({ handlePosting }) => {
         })
 
         setFormData({
-            fullName: '',
-            email: '',
-            comment: '',
+            full_name: '',
+            user_comment: '',
         })
     }
 
@@ -43,45 +48,44 @@ const FeedBackForm = ({ handlePosting }) => {
         });
     }
   return (
-    <ThemeProvider theme={darkTheme}>
+    <>
     <Container className='formContainer'>
     <div 
-    style={{ fontSize: "20px", fontFamily: "'Carter One', cursive", fontWeight: "bold", color: "gold", }}
+    style={{ fontSize: "20px", fontWeight: "bold", color: "gold", }}
     >
-        FeedBack Form
+        <i>FeedBack Form</i>
     </div>
-    <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+    <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: "center" }}>
       <div>
         <FormControl sx={{ m: 1, width: '35ch' }}>
             <InputLabel>Full Name</InputLabel>
-            <Input name="fullName" value={formData.fullName} onChange={handleChange}/>
+            <OutlinedInput label="Full Name" name="full_name" value={formData.full_name} onChange={handleChange}/>
             <FormHelperText>Please enter full name</FormHelperText>
             </FormControl>
       </div>
       <div>
-      <FormControl sx={{ m: 1, width: '35ch' }}>
-        <InputLabel>Email Address</InputLabel>
-        <Input name="email" value={formData.email} onChange={handleChange}/>
-        <FormHelperText>We'll never share your email</FormHelperText>
-        </FormControl>
-      </div>
-      <div>
         <FormControl sx={{ m: 1, width: '35ch' }}>
             <InputLabel>Comment Down Below</InputLabel>
-            <Input name="comment" value={formData.comment} multiline rows={3} onChange={handleChange}/>
+            <OutlinedInput label="Comment Down Below" name="user_comment" value={formData.user_comment} multiline rows={3} onChange={handleChange}/>
             <FormHelperText>Give us your feedback</FormHelperText>
         </FormControl>
       </div>
     </Box>
     <div>
-        <FormControl sx={{ display: "flex", flexWrap: "wrap", m: 1, width: '10ch' }}>
-            <Button variant='outlined' type='submit' onClick={handleSubmit}>
+        <FormControl>
+            <Button 
+            sx={{
+            color: "#161b21",
+            backgroundColor: "gold",
+            "&:hover": {backgroundColor: "gold", }
+            }} 
+            type='submit' onClick={handleSubmit}>
                 SUBMIT
             </Button>
         </FormControl>
       </div>
     </Container>
-    </ThemeProvider>
+    </>
   )
 }
 
