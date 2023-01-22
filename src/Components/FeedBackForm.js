@@ -11,7 +11,8 @@ const FeedBackForm = ({ handlePosting }) => {
         full_name: userProfile?.full_name,
         email: user.email,
         user_comment: '',
-        user_id: user.id
+        user_id: user.id,
+        image_upload: userProfile.image_upload
     })
 
     function handleSubmit(e){
@@ -28,7 +29,8 @@ const FeedBackForm = ({ handlePosting }) => {
                 full_name: formData.full_name,
                 email: user.email,
                 user_comment: formData.user_comment,
-                user_id: user.id
+                user_id: user.id,
+                image_upload: userProfile.image_upload
             })
         })
         .then(r => r.json())
