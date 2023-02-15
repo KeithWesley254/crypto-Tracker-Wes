@@ -61,7 +61,7 @@ const CoinsTable = () => {
             label="Search for a coin ..."
             variant='outlined'
                 style={{ marginBottom: 20, width: "100%" }}
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={(e) => setSearch(e.target.value.toLocaleLowerCase())}
             />
 
             <TableContainer>

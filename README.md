@@ -35,7 +35,7 @@ I used 2 APIs for this application.
 
 # Deployed/Website link:
 
-http://crypto-tracker-1013047617.eu-west-2.elb.amazonaws.com/
+https://txc-crypto-tracker.netlify.app/
 # License:
 
 MIT License
