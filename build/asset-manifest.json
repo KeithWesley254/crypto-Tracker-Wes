@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.c88643f3.css",
-    "main.js": "/static/js/main.b14f188a.js",
+    "main.js": "/static/js/main.b3c6b1da.js",
     "static/media/crypto-asset-2.jpg": "/static/media/crypto-asset-2.9909d81225b42fbff8e6.jpg",
     "static/media/coolcat.webp": "/static/media/coolcat.df58ab98e17049dc6311.webp",
     "index.html": "/index.html",
     "main.c88643f3.css.map": "/static/css/main.c88643f3.css.map",
-    "main.b14f188a.js.map": "/static/js/main.b14f188a.js.map"
+    "main.b3c6b1da.js.map": "/static/js/main.b3c6b1da.js.map"
   },
   "entrypoints": [
     "static/css/main.c88643f3.css",
-    "static/js/main.b14f188a.js"
+    "static/js/main.b3c6b1da.js"
   ]
 }
