@@ -12,7 +12,7 @@ const ProfileCard = ({ userProfile, setIsProfile }) => {
     function handleDelete(){
         const token = JSON.parse(localStorage.getItem("token"));
     
-        fetch(`http://feedback-loadbalancer-1037602220.eu-west-2.elb.amazonaws.com/api/users/${user.id}`,{
+        fetch(`https://txc-feedback-api.onrender.com/api/users/${user.id}`,{
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${token}`,

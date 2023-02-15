@@ -19,7 +19,7 @@ const FeedBackForm = ({ handlePosting }) => {
         const token = JSON.parse(localStorage.getItem("token"));
 
         e.preventDefault();
-        fetch('http://feedback-loadbalancer-1037602220.eu-west-2.elb.amazonaws.com/api/feedbacks',{
+        fetch('https://txc-feedback-api.onrender.com/api/feedbacks',{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

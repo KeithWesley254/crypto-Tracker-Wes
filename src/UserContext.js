@@ -15,7 +15,7 @@ export default function UserContext({ children }){
     useEffect(() => {
       const token = JSON.parse(localStorage.getItem("token"));
   
-      fetch("http://feedback-loadbalancer-1037602220.eu-west-2.elb.amazonaws.com/auto_login", {
+      fetch("https://txc-feedback-api.onrender.com/auto_login", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -31,7 +31,7 @@ export default function UserContext({ children }){
       const tokenRet = JSON.parse(localStorage.getItem("token"));
   
       if(user.id){
-        fetch(`http://feedback-loadbalancer-1037602220.eu-west-2.elb.amazonaws.com/api/user_profiles/${user?.id}`, {
+        fetch(`https://txc-feedback-api.onrender.com/api/user_profiles/${user?.id}`, {
           headers: {
             Authorization: `Bearer ${tokenRet}`
           },
@@ -48,7 +48,7 @@ export default function UserContext({ children }){
         e.preventDefault();
         setErrors([]);
         setIsLoading(true);
-        fetch("http://feedback-loadbalancer-1037602220.eu-west-2.elb.amazonaws.com/api/users", {
+        fetch("https://txc-feedback-api.onrender.com/api/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -72,7 +72,7 @@ export default function UserContext({ children }){
     function handleSubmitLogin(e, data, state){
         e.preventDefault();
         setIsLoading(true);
-        fetch('http://feedback-loadbalancer-1037602220.eu-west-2.elb.amazonaws.com/login', {
+        fetch('https://txc-feedback-api.onrender.com/login', {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

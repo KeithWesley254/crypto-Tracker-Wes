@@ -23,7 +23,7 @@ const ProfileForm = ({ setIsProfile, user, userProfile, setUserProfile }) => {
     
     const token = JSON.parse(localStorage.getItem("token"));
 
-    fetch(`http://feedback-loadbalancer-1037602220.eu-west-2.elb.amazonaws.com/api/user_profiles/${user?.id}`,{
+    fetch(`https://txc-feedback-api.onrender.com/api/user_profiles/${user?.id}`,{
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",

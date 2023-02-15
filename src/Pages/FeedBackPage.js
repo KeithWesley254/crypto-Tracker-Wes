@@ -12,7 +12,7 @@ function FeedBackPage(){
   const { userProfile } = UserState();
 
     useEffect(() => {
-        fetch('http://feedback-loadbalancer-1037602220.eu-west-2.elb.amazonaws.com/api/feedbacks')
+        fetch('https://txc-feedback-api.onrender.com/api/feedbacks')
         .then(r => r.json())
         .then(data => setCommentsZ(data))
     }, []);
@@ -25,7 +25,7 @@ function FeedBackPage(){
 
       const token = JSON.parse(localStorage.getItem("token"));
 
-        fetch(`http://feedback-loadbalancer-1037602220.eu-west-2.elb.amazonaws.com/api/feedbacks/${id}`,{
+        fetch(`https://txc-feedback-api.onrender.com/api/feedbacks/${id}`,{
           headers: {
             Authorization: `Bearer ${token}`
           },
